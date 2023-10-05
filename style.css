@@ -1,0 +1,181 @@
+/* Reset */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  min-height: 100vh;
+  font-family: "Noto Sans KR", sans-serif;
+  cursor: default;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+textarea,
+select,
+button {
+  font: inherit;
+  background-color: transparent;
+  border: 0;
+}
+
+a,
+button {
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+  word-break: keep-all;
+  letter-spacing: -0.04em;
+}
+
+table {
+  table-layout: fixed;
+  border-collapse: collapse;
+}
+
+:root {
+  --color-primary: #4ec298;
+  --color-gray: #d9d9d9;
+  --color-white: #fff;
+}
+
+/* UI */
+
+.container {
+  width: 100%;
+  max-width: 90rem;
+  padding: 2.4rem 1.6rem;
+  margin: 0 auto;
+}
+
+.title {
+  margin-bottom: 2.4rem;
+  font-size: 2.8rem;
+  line-height: 1.286;
+}
+
+.desc {
+  margin-bottom: 3.2rem;
+  font-size: 1.6rem;
+  line-height: 1.5;
+}
+
+.textToSpeak {
+  width: 100%;
+  height: 30vh;
+  min-height: 22.6rem;
+  padding: 1.6rem;
+  margin-bottom: 2.4rem;
+  font-size: 1.6rem;
+  line-height: 1.5;
+  border: 0.1rem solid;
+}
+
+.input_label {
+  display: inline-block;
+  margin-bottom: 0.8rem;
+  font-size: 1.4rem;
+  line-height: 1.429;
+}
+
+.input_range {
+  display: block;
+  -webkit-appearance: none; /* Override default CSS styles */
+  appearance: none;
+  width: 100%; /* Full-width */
+  height: 0.8rem; /* Specified height */
+  background: var(--color-gray); /* Grey background */
+  outline: none; /* Remove outline */
+  border-radius: 10rem;
+}
+
+.input_range {
+  margin-bottom: 1.6rem;
+}
+
+.input_range::-webkit-slider-thumb {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  -webkit-appearance: none; /* Override default look */
+  appearance: none;
+  background-color: var(--color-primary);
+  cursor: pointer;
+}
+
+.btn_play {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 12rem;
+  height: 12rem;
+  margin: 4rem auto 0;
+  background-color: var(--color-primary);
+  border-radius: 50%;
+  border: 0;
+}
+
+.btn_play::after {
+  position: relative;
+  left: 1rem;
+  display: block;
+  width: 5rem;
+  height: 5rem;
+  content: "";
+  background-color: var(--color-white);
+  clip-path: polygon(50% 30%, 0% 100%, 100% 100%);
+  transform: rotateZ(90deg);
+}
+
+.btn_play.is_stop::after {
+  left: 0;
+  clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
+}
+
+@media screen and (min-width: 48rem) {
+  .container {
+    padding: 2.4rem;
+  }
+}
+
+@media screen and (min-width: 75rem) {
+  .container {
+    padding: 2.4rem 4rem;
+  }
+}
